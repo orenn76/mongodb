@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.4.RELEASE</version>
+    </parent>
+
+    <groupId>com.ninyo.mongodb</groupId>
+    <artifactId>mongodb-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.12.2</version>
+
+    <modules>
+        <module>application</module>
+        <module>mongodb-sdk</module>
+        <module>mongodb-common</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.ninyocommon</groupId>
+                <artifactId>ninyo-common</artifactId>
+                <version>${com.ninyocommon.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ninyomessagebroker</groupId>
+                <artifactId>ninyo-messagebroker-sdk</artifactId>
+                <version>${com.ninyomessagebroker}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>spring-beans</artifactId>
+                        <groupId>org.springframework</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>spring-context</artifactId>
+                        <groupId>org.springframework</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>spring-boot-autoconfigure</artifactId>
+                        <groupId>org.springframework.boot</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ninyosecured.server</groupId>
+                <artifactId>ninyo-secured-server</artifactId>
+                <version>${com.ninyosecured}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ninyosecured.client</groupId>
+                <artifactId>ninyo-secured-client</artifactId>
+                <version>${com.ninyosecured}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${org.springframework.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${org.springframework.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${org.springframework.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${org.springframework.jasypt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-config</artifactId>
+                <version>${org.springframework.config.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-commons</artifactId>
+                <version>${org.springframework.data.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${org.springframework.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${maven.jackson}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${maven.jackson}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${javax.validation.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ninyomongodb</groupId>
+                <artifactId>mongodb-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-mongodb</artifactId>
+                <version>${org.springframework.data.mongodb.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.mysema.querydsl</groupId>
+                <artifactId>querydsl-mongodb</artifactId>
+                <version>${org.springframework.data.mongodb.querydsl.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.mysema.querydsl</groupId>
+                <artifactId>querydsl-apt</artifactId>
+                <version>${org.springframework.data.mongodb.querydsl.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${org.apache.commons.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${org.apache.commons.beanutils.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate.javax.persistence</groupId>
+                <artifactId>hibernate-jpa-2.0-api</artifactId>
+                <version>${hibernate.jpa.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://nexus371:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <url>http://nexus371:8081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <org.springframework.boot.version>1.5.4.RELEASE</org.springframework.boot.version>
+        <org.springframework.jasypt.version>1.16</org.springframework.jasypt.version>
+        <org.springframework.config.version>1.4.3.RELEASE</org.springframework.config.version>
+        <org.springframework.data.version>1.13.4.RELEASE</org.springframework.data.version>
+        <org.springframework.data.mongodb.version>2.0.3.RELEASE</org.springframework.data.mongodb.version>
+        <org.springframework.data.mongodb.querydsl.version>3.7.4</org.springframework.data.mongodb.querydsl.version>
+        <hibernate.jpa.version>1.0.1.Final</hibernate.jpa.version>
+        <maven.jackson>2.8.10</maven.jackson>
+        <javax.validation.version>2.0.1.Final</javax.validation.version>
+        <org.apache.maven.plugins>3.0.0</org.apache.maven.plugins>
+        <org.apache.commons.version>3.7</org.apache.commons.version>
+        <org.apache.commons.beanutils.version>1.9.3</org.apache.commons.beanutils.version>
+        <junit.version>4.12</junit.version>
+        <com.ninyomessagebroker>1.5.3</com.ninyomessagebroker>
+        <com.ninyocommon.version>1.7</com.ninyocommon.version>
+        <com.ninyosecured>4.6</com.ninyosecured>
+        <lombok.version>1.16.16</lombok.version>
+    </properties>
+
+</project>
